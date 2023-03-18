@@ -61,7 +61,7 @@
    &none &kp Q      &kp W      &kp E       &kp R        &kp T         &kp Y         &kp U        &kp I        &kp O      &kp P         &none
    &none &mt LCTRL A &mt RALT S &mt DEL D &mt LSHFT F  &kp G         &kp H         &mt RSHFT J  &mt RCTRL K  &mt RALT L &mt RCMD SEMI &none
    &none &mt LC(LA(DEL)) Z      &mt LALT X &kp C       &kp V        &kp B         &kp N         &kp M        &kp COMMA    &kp DOT    &kp FSLH      &none
-                               &lt RSE ESC &lt LWR QUOT &mt LSHFT SPACE     &mt RSHFT RET &lt RSE BSPC &lt LWR TAB
+                               &lt RSE ESC &lt LWR QUOT &mt LCMD SPACE     &mt LCMD RET &lt RSE BSPC &lt LWR TAB
                         >;
                 };
                 lower_layer {
