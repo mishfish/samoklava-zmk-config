@@ -34,15 +34,57 @@
            compatible = "zmk,combos";
            combo_lpar {
               timeout-ms = <50>;
-              key-positions = <25 26>;
+              key-positions = <1 2>;
               bindings = <&kp LPAR>;
            };
 
            combo_rpar {
               timeout-ms = <50>;
-              key-positions = <33 34>;
+              key-positions = <9 10>;
               bindings = <&kp RPAR>;
            };
+
+          combo_lbkt {
+              timeout-ms = <50>;
+              key-positions = <2 3>;
+              bindings = <&kp LBKT>;
+          };
+
+          combo_rbkt {
+              timeout-ms = <50>;
+              key-positions = <8 9>;
+              bindings = <&kp RBKT>;
+          };
+
+          combo_lbrc {
+              timeout-ms = <50>;
+              key-positions = <3 4>;
+              bindings = <&kp LBRC>;
+          };
+
+          combo_rbrc {
+              timeout-ms = <50>;
+              key-positions = <7 8>;
+              bindings = <&kp RBRC>;
+          };
+
+          combo_grave {
+              timeout-ms = <50>;
+              key-positions = <4 5>;
+              bindings = <&kp GRAVE>;
+          };
+
+          combo_tilda {
+              timeout-ms = <50>;
+              key-positions = <6 7>;
+              bindings = <&kp TILDE>;
+          };
+          combo_prnscr{
+              timeout-ms = <50>;
+              key-positions = <10 22 34>;
+              bindings = <&kp PRINTSCREEN>;
+          };
+
         };
 
         conditional_layers {
@@ -59,24 +101,24 @@
                 default_layer {
                         bindings = <
    &none &kp Q      &kp W      &kp E       &kp R        &kp T         &kp Y         &kp U        &kp I        &kp O      &kp P         &none
-   &none &mt LCTRL A &mt RALT S &mt DEL D &mt LSHFT F  &kp G         &kp H         &mt RSHFT J  &mt RCTRL K  &mt RALT L &mt RCMD SEMI &none
-   &none &mt LC(LA(DEL)) Z      &mt LALT X &kp C       &kp V        &kp B         &kp N         &kp M        &kp COMMA    &kp DOT    &kp FSLH      &none
+   &none &mt LCTRL A &mt LALT S &mt LCMD D &mt LSHFT F  &kp G         &kp H         &mt RSHFT J  &mt RCMD K  &mt RALT L &mt RCTRL SEMI &none
+   &none &mt LCTRL Z &mt LALT X &mt LCMD C &mt LSHFT V  &kp B         &kp N         &mt RSHFT M  &mt RCMD COMMA &mt RALT DOT &mt RCTRL FSLH &none
                                &lt RSE ESC &lt LWR QUOT &mt LCMD SPACE     &mt RCMD RET &lt RSE BSPC &lt LWR TAB
                         >;
                 };
                 lower_layer {
                         bindings = <
    &none &kp N1   &kp N2   &kp N3      &kp N4       &kp N5        &kp N6   &kp N7         &kp N8       &kp N9         &kp N0     &none
-   &none &kp DEL &kp RALT &kp LCTRL   &kp LSHFT    &none         &kp LEFT &mt RSHFT DOWN &mt RCTRL UP &mt RALT RIGHT &kp RCMD   &none
-   &none &none    &kp LALT &none       &kp Y        &none         &kp HOME &kp PG_DN      &kp PG_UP    &mt LALT END   &caps_word &none
+   &none &kp LCTRL &kp LALT &kp LCMD   &kp LSHFT    &none         &kp LEFT &mt RSHFT DOWN &mt RCMD UP &mt RALT RIGHT &kp RCTRL   &none
+   &none &kp LCTRL &kp LALT &kp LCMD   &kp LSHFT    &none         &kp HOME &mt RSHFT PG_DN &mt RCMD PG_UP    &mt LALT END   &caps_word &none
                            &lt RSE ESC &lt LWR QUOT &kp SPACE     &mt RCMD RET &mo RSE &lt LWR TAB
                         >;
                 };
                 raise_layer {
                         bindings = <
    &none &kp EXCL    &kp AT      &kp HASH     &kp DLLR     &kp PRCNT       &kp CARET    &kp AMPS        &kp KP_MULTIPLY &kp LPAR      &kp RPAR      &none
-   &none &mt DEL F1 &mt RALT F2 &mt LCTRL F3 &mt LSHFT F4 &kp F5          &kp MINUS     &mt RSHFT EQUAL &mt RCTRL LBKT  &mt RALT RBKT &mt RCMD BSLH &none
-   &none &kp F6      &mt LALT F7 &kp F8       &kp F11       &kp F12         &kp UNDER     &kp PLUS        &kp LBRC        &kp RBRC      &kp PIPE      &none
+   &none &mt LCTRL F1 &mt LALT F2 &mt LCMD F3 &mt LSHFT F4 &kp F5          &kp MINUS     &mt RSHFT EQUAL &mt RCMD LBKT  &mt RALT RBKT &mt RCTRL BSLH &none
+   &none &mt LCTRL F6 &mt LALT F7 &mt LCMD F8 &mt LSHFT F11 &kp F12        &kp UNDER     &mt RSHFT PLUS  &mt RCMD LBRC  &mt RALT RBRC &mt RCTRL PIPE &none
                                  &lt RSE ESC  &mo LWR      &kp GRAVE       &mt RCMD RET &lt RSE BSPC    &lt LWR TAB
                         >;
                 };
