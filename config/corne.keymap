@@ -82,7 +82,7 @@
           combo_quot {
               timeout-ms = <50>;
               key-positions = <10 22>;
-              bindings = <&kp PRINTSCREEN>;
+              bindings = <&kp QUOT>;
           };
         };
 
