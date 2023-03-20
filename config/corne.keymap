@@ -79,12 +79,11 @@
               key-positions = <6 7>;
               bindings = <&kp TILDE>;
           };
-          combo_prnscr{
+          combo_quot {
               timeout-ms = <50>;
-              key-positions = <10 22 34>;
+              key-positions = <10 22>;
               bindings = <&kp PRINTSCREEN>;
           };
-
         };
 
         conditional_layers {
@@ -103,7 +102,7 @@
    &none &kp Q      &kp W      &kp E       &kp R        &kp T         &kp Y         &kp U        &kp I        &kp O      &kp P         &none
    &none &mt LCTRL A &mt LALT S &mt LCMD D &mt LSHFT F  &kp G         &kp H         &mt RSHFT J  &mt RCMD K  &mt RALT L &mt RCTRL SEMI &none
    &none &mt LCTRL Z &mt LALT X &mt LCMD C &mt LSHFT V  &kp B         &kp N         &mt RSHFT M  &mt RCMD COMMA &mt RALT DOT &mt RCTRL FSLH &none
-                               &lt RSE ESC &lt LWR QUOT &mt LCMD SPACE     &mt RCMD RET &lt RSE BSPC &lt LWR TAB
+                               &lt RSE ESC &lt LWR LCMD &mt LCMD SPACE     &mt RCMD RET &lt RSE BSPC &lt LWR TAB
                         >;
                 };
                 lower_layer {
@@ -111,7 +110,7 @@
    &none &kp N1   &kp N2   &kp N3      &kp N4       &kp N5        &kp N6   &kp N7         &kp N8       &kp N9         &kp N0     &none
    &none &kp LCTRL &kp LALT &kp LCMD   &kp LSHFT    &none         &kp LEFT &mt RSHFT DOWN &mt RCMD UP &mt RALT RIGHT &kp RCTRL   &none
    &none &kp LCTRL &kp LALT &kp LCMD   &kp LSHFT    &none         &kp HOME &mt RSHFT PG_DN &mt RCMD PG_UP    &mt LALT END   &caps_word &none
-                           &lt RSE ESC &lt LWR QUOT &kp SPACE     &mt RCMD RET &mo RSE &lt LWR TAB
+                           &lt RSE ESC &lt LWR LCMD &kp SPACE     &mt RCMD RET &mo RSE &lt LWR TAB
                         >;
                 };
                 raise_layer {
