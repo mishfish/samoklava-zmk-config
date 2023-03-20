@@ -84,16 +84,6 @@
               key-positions = <10 22>;
               bindings = <&kp QUOT>;
           };
-          combo_cp {
-              timeout-ms = <50>;
-              key-positions = <1 13>;
-              bindings = <&mt LCMD>, <&kp C>;
-          };
-          combo_pst {
-              timeout-ms = <50>;
-              key-positions = <13 25>;
-              bindings = <&mt LCMD>, <&kp V>;
-          };
         };
 
         conditional_layers {
