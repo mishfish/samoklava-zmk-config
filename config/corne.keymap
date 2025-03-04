@@ -110,7 +110,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
 
-            bindings =     = <&macro_press &kp LSHFT>
+            bindings       = <&macro_press &kp LSHFT>
                            , <&macro_press &kp LCMD>
                            , <&macro_tap &N4>
                            , <&macro_release &kp LSHFT>
