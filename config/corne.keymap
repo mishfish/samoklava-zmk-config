@@ -89,6 +89,11 @@
             key-positions = <10 22>;
             bindings = <&kp QUOT>;
         };
+
+        prntscr {
+            bindings = <&new_macro>;
+            key-positions = <4 3 2>;
+        };
     };
 
     conditional_layers {
