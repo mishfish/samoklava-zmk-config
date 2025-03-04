@@ -89,18 +89,6 @@
             key-positions = <10 22>;
             bindings = <&kp QUOT>;
         };
-
-        combo_cmd_tab {
-            timeout-ms = <50>;
-            key-positions = <1 2 3>;
-            bindings = <&kp PRINTSCREEN>;
-        };
-
-        combo_prntscrn {
-            timeout-ms = <50>;
-            key-positions = <2 3 4>;
-            bindings = <&kp LCMD>;
-        };
     };
 
     conditional_layers {
@@ -109,6 +97,16 @@
         tri_layer {
             if-layers = <LOWER RAISE>;
             then-layer = <ADJUST>;
+        };
+    };
+
+    macros {
+        new_macro: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LG(KP_NUMBER_4))>, <&macro_press>;
+
+            label = "NEW_MACRO";
         };
     };
 
