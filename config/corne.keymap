@@ -97,6 +97,12 @@
               key-positions = <10 22>;
               bindings = <&kp QUOT>;
           };
+
+          combo_cmd_tab {
+            timeout-ms = <50>;
+            key-positions = <1 2 3>; // Replace with actual key positions
+            bindings = <&kp LCMD &kp TAB>;
+          };
         };
 
         conditional_layers {
