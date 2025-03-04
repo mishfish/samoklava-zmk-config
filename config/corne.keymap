@@ -8,7 +8,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
-
 #define DEFAULT 0
 #define LOWER   1
 #define RAISE   2
@@ -28,123 +27,128 @@
 };
 
 / {
-        combos {
-           compatible = "zmk,combos";
+    combos {
+        compatible = "zmk,combos";
 
-           combo_esc {
-              timeout-ms = <50>;
-              key-positions = <0 1>;
-              bindings = <&kp ESC>;
-           };
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <1 13>;
+            bindings = <&kp ESC>;
+        };
 
-	        combo_lpar {
-              timeout-ms = <50>;
-              key-positions = <1 2>;
-              bindings = <&kp LPAR>;
-           };
+        combo_lpar {
+            timeout-ms = <50>;
+            key-positions = <1 2>;
+            bindings = <&kp LPAR>;
+        };
 
-           combo_rpar {
-              timeout-ms = <50>;
-              key-positions = <9 10>;
-              bindings = <&kp RPAR>;
-           };
+        combo_rpar {
+            timeout-ms = <50>;
+            key-positions = <9 10>;
+            bindings = <&kp RPAR>;
+        };
 
-          combo_lbkt {
-              timeout-ms = <50>;
-              key-positions = <2 3>;
-              bindings = <&kp LBKT>;
-          };
+        combo_lbkt {
+            timeout-ms = <50>;
+            key-positions = <2 3>;
+            bindings = <&kp LBKT>;
+        };
 
-          combo_rbkt {
-              timeout-ms = <50>;
-              key-positions = <8 9>;
-              bindings = <&kp RBKT>;
-          };
+        combo_rbkt {
+            timeout-ms = <50>;
+            key-positions = <8 9>;
+            bindings = <&kp RBKT>;
+        };
 
-          combo_lbrc {
-              timeout-ms = <50>;
-              key-positions = <3 4>;
-              bindings = <&kp LBRC>;
-          };
+        combo_lbrc {
+            timeout-ms = <50>;
+            key-positions = <3 4>;
+            bindings = <&kp LBRC>;
+        };
 
-          combo_rbrc {
-              timeout-ms = <50>;
-              key-positions = <7 8>;
-              bindings = <&kp RBRC>;
-          };
+        combo_rbrc {
+            timeout-ms = <50>;
+            key-positions = <7 8>;
+            bindings = <&kp RBRC>;
+        };
 
-          combo_grave {
-              timeout-ms = <50>;
-              key-positions = <4 5>;
-              bindings = <&kp GRAVE>;
-          };
+        combo_grave {
+            timeout-ms = <50>;
+            key-positions = <4 5>;
+            bindings = <&kp GRAVE>;
+        };
 
-          combo_tilda {
-              timeout-ms = <50>;
-              key-positions = <6 7>;
-              bindings = <&kp TILDE>;
-          };
-          combo_quot {
-              timeout-ms = <50>;
-              key-positions = <10 22>;
-              bindings = <&kp QUOT>;
-          };
+        combo_tilda {
+            timeout-ms = <50>;
+            key-positions = <6 7>;
+            bindings = <&kp TILDE>;
+        };
 
-          combo_cmd_tab {
+        combo_quot {
+            timeout-ms = <50>;
+            key-positions = <10 22>;
+            bindings = <&kp QUOT>;
+        };
+
+        combo_cmd_tab {
             timeout-ms = <50>;
             key-positions = <1 2 3>;
-            bindings = <&kp LCMD &kp TAB>;
-          };
+            bindings = <&kp PRINTSCREEN>;
+        };
 
-         combo_prntscrn {
+        combo_prntscrn {
             timeout-ms = <50>;
-            key-positions = <0 1 2>;
+            key-positions = <2 3 4>;
             bindings = <&kp LCMD>;
-         };
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        tri_layer {
+            if-layers = <LOWER RAISE>;
+            then-layer = <ADJUST>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+&none  &kp Q        &kp W       &kp E        &kp R          &kp T       &kp Y         &kp U         &kp I           &kp O         &kp P           &none
+&none  &mt LCTRL A  &mt LALT S  &mt LCMD D   &mt LSHFT F    &kp G       &kp H         &mt RSHFT J   &mt RCMD K      &mt RALT L    &mt RCTRL SEMI  &none
+&none  &mt LCTRL Z  &mt LALT X  &mt LCMD C   &mt LSHFT V    &kp B       &kp N         &mt RSHFT M   &mt RCMD COMMA  &mt RALT DOT  &mt RCTRL FSLH  &none
+                                &lt RSE ESC  &lt LWR SPACE  &kp LCMD    &mt RCMD RET  &lt RSE BSPC  &lt LWR TAB
+            >;
         };
 
-        conditional_layers {
-            compatible = "zmk,conditional-layers";
-            tri_layer {
-                if-layers = <LOWER RAISE>;
-                then-layer = <ADJUST>;
-            };
+        lower_layer {
+            bindings = <
+&none  &kp N1     &kp N2    &kp N3       &kp N4         &kp N5      &kp N6        &kp N7           &kp N8          &kp N9          &kp N0      &none
+&none  &kp LCTRL  &kp LALT  &kp LCMD     &kp LSHFT      &none       &kp LEFT      &mt RSHFT DOWN   &mt RCMD UP     &mt RALT RIGHT  &kp RCTRL   &none
+&none  &kp LCTRL  &kp LALT  &kp LCMD     &kp LSHFT      &none       &kp HOME      &mt RSHFT PG_DN  &mt RCMD PG_UP  &mt LALT END    &caps_word  &none
+                            &lt RSE ESC  &lt LWR SPACE  &kp LCMD    &mt RCMD RET  &mo RSE          &lt LWR TAB
+            >;
         };
 
-        keymap {
-                compatible = "zmk,keymap";
-
-                default_layer {
-                        bindings = <
-   &none &kp Q      &kp W      &kp E       &kp R        &kp T         &kp Y         &kp U        &kp I        &kp O      &kp P         &none
-   &none &mt LCTRL A &mt LALT S &mt LCMD D &mt LSHFT F  &kp G         &kp H         &mt RSHFT J  &mt RCMD K  &mt RALT L &mt RCTRL SEMI &none
-   &none &mt LCTRL Z &mt LALT X &mt LCMD C &mt LSHFT V  &kp B         &kp N         &mt RSHFT M  &mt RCMD COMMA &mt RALT DOT &mt RCTRL FSLH &none
-                               &lt RSE ESC &lt LWR SPACE &kp LCMD     &mt RCMD RET &lt RSE BSPC &lt LWR TAB
-                        >;
-                };
-                lower_layer {
-                        bindings = <
-   &none &kp N1   &kp N2   &kp N3      &kp N4       &kp N5        &kp N6   &kp N7         &kp N8       &kp N9         &kp N0     &none
-   &none &kp LCTRL &kp LALT &kp LCMD   &kp LSHFT    &none         &kp LEFT &mt RSHFT DOWN &mt RCMD UP &mt RALT RIGHT &kp RCTRL   &none
-   &none &kp LCTRL &kp LALT &kp LCMD   &kp LSHFT    &none         &kp HOME &mt RSHFT PG_DN &mt RCMD PG_UP    &mt LALT END   &caps_word &none
-                           &lt RSE ESC &lt LWR SPACE &kp LCMD     &mt RCMD RET &mo RSE &lt LWR TAB
-                        >;
-                };
-                raise_layer {
-                        bindings = <
-   &none &kp EXCL    &kp AT      &kp HASH     &kp DLLR     &kp PRCNT       &kp CARET    &kp AMPS        &kp KP_MULTIPLY &kp LPAR      &kp RPAR      &none
-   &none &mt LCTRL F1 &mt LALT F2 &mt LCMD F3 &mt LSHFT F4 &kp F5          &kp MINUS     &mt RSHFT EQUAL &mt RCMD LBKT  &mt RALT RBKT &mt RCTRL BSLH &none
-   &none &mt LCTRL F6 &mt LALT F7 &mt LCMD F8 &mt LSHFT F11 &kp F12        &kp UNDER     &mt RSHFT PLUS  &mt RCMD LBRC  &mt RALT RBRC &mt RCTRL PIPE &none
-                                 &lt RSE ESC  &mo LWR      &kp GRAVE       &mt RCMD RET &lt RSE BSPC    &lt LWR TAB
-                        >;
-                };
-                adjust_layer {
-                        bindings = <
-   &none &bt BT_CLR   &none        &none        &none        &none            &none           &kp K_MUTE   &none &none &bootloader &none
-   &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4     &kp C_BRI_UP    &kp C_VOL_UP &none &none &none      &none
-   &none &bootloader        &none        &none        &none        &none            &kp C_BRI_DN    &kp C_VOL_DN &none &none &none       &none
-                                   &none        &none        &none            &none           &none        &none
-                        >;
-                };
+        raise_layer {
+            bindings = <
+&none  &kp EXCL      &kp AT       &kp HASH     &kp DLLR       &kp PRCNT    &kp CARET     &kp AMPS         &kp KP_MULTIPLY  &kp LPAR       &kp RPAR        &none
+&none  &mt LCTRL F1  &mt LALT F2  &mt LCMD F3  &mt LSHFT F4   &kp F5       &kp MINUS     &mt RSHFT EQUAL  &mt RCMD LBKT    &mt RALT RBKT  &mt RCTRL BSLH  &none
+&none  &mt LCTRL F6  &mt LALT F7  &mt LCMD F8  &mt LSHFT F11  &kp F12      &kp UNDER     &mt RSHFT PLUS   &mt RCMD LBRC    &mt RALT RBRC  &mt RCTRL PIPE  &none
+                                  &lt RSE ESC  &mo LWR        &kp GRAVE    &mt RCMD RET  &lt RSE BSPC     &lt LWR TAB
+            >;
         };
+
+        adjust_layer {
+            bindings = <
+&none  &bt BT_CLR    &none         &none         &none         &none           &none         &kp K_MUTE    &none  &none  &bootloader  &none
+&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp C_BRI_UP  &kp C_VOL_UP  &none  &none  &none        &none
+&none  &bootloader   &none         &none         &none         &none           &kp C_BRI_DN  &kp C_VOL_DN  &none  &none  &none        &none
+                                   &none         &none         &none           &none         &none         &none
+            >;
+        };
+    };
 };
