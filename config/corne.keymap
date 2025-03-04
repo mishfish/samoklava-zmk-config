@@ -94,13 +94,15 @@
             bindings = <&prntscr_macro>;
             key-positions = <4 3 2>;
         };
+
         ide_b {
             bindings = <&ide_b_macro>;
             key-positions = <1 13 25>;
         };
+
         ide_f {
             bindings = <&ide_f_macro>;
-            key-positions = <12 24 36>;
+            key-positions = <22 10 34>;
         };
     };
 
@@ -117,41 +119,55 @@
         prntscr_macro: prntscr_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-
-            bindings       = <&macro_press &kp LSHFT>
-                           , <&macro_press &kp LCMD>
-                           , <&macro_tap &kp N4>
-                           , <&macro_release &kp LSHFT>
-                           , <&macro_release &kp LCMD>
-                           ;
+            bindings =
+                <&macro_press>,
+                <&kp LSHFT>,
+                <&macro_press>,
+                <&kp LCMD>,
+                <&macro_tap>,
+                <&kp N4>,
+                <&macro_release>,
+                <&kp LSHFT>,
+                <&macro_release>,
+                <&kp LCMD>;
 
             label = "PRNTSCR_MACRO";
         };
+
         ide_b_macro: ide_b_macro {
-                    compatible = "zmk,behavior-macro";
-                    #binding-cells = <0>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_press>,
+                <&kp LCMD>,
+                <&macro_tap>,
+                <&kp LEFT>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_release>,
+                <&kp LCMD>;
 
-                    bindings       = <&macro_press &kp LALT>
-                                   , <&macro_press &kp LCMD>
-                                   , <&macro_tap &kp LEFT>
-                                   , <&macro_release &kp LALT>
-                                   , <&macro_release &kp LCMD>
-                                   ;
-
-                    label = "IDE_B_MACRO";
+            label = "IDE_B_MACRO";
         };
+
         ide_f_macro: ide_f_macro {
-                    compatible = "zmk,behavior-macro";
-                    #binding-cells = <0>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_press>,
+                <&kp LCMD>,
+                <&macro_tap>,
+                <&kp RIGHT>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_release>,
+                <&kp LCMD>;
 
-                    bindings       = <&macro_press &kp LALT>
-                                   , <&macro_press &kp LCMD>
-                                   , <&macro_tap &kp RIGHT>
-                                   , <&macro_release &kp LALT>
-                                   , <&macro_release &kp LCMD>
-                                   ;
-
-                    label = "IDE_F_MACRO";
+            label = "IDE_F_MACRO";
         };
     };
 
@@ -169,9 +185,9 @@
 
         lower_layer {
             bindings = <
-&none  &kp N1     &kp N2    &kp N3       &kp N4         &kp N5      &kp N6        &kp N7           &kp N8          &kp N9          &kp N0      &none
-&none  &kp LCTRL  &kp LALT  &kp LCMD     &kp LSHFT      &none       &kp LEFT      &kp DOWN         &kp UP          &kp RIGHT       &kp RCTRL   &none
-&none  &kp LCTRL  &kp LALT  &kp LCMD     &kp LSHFT      &none       &kp HOME      &mt RSHFT PG_DN  &mt RCMD PG_UP  &mt LALT END    &caps_word  &none
+&none  &kp N1     &kp N2    &kp N3       &kp N4         &kp N5      &kp N6        &kp N7           &kp N8          &kp N9        &kp N0      &none
+&none  &kp LCTRL  &kp LALT  &kp LCMD     &kp LSHFT      &none       &kp LEFT      &kp DOWN         &kp UP          &kp RIGHT     &kp RCTRL   &none
+&none  &kp LCTRL  &kp LALT  &kp LCMD     &kp LSHFT      &none       &kp HOME      &mt RSHFT PG_DN  &mt RCMD PG_UP  &mt LALT END  &caps_word  &none
                             &lt RSE ESC  &lt LWR SPACE  &kp LCMD    &mt RCMD RET  &mo RSE          &lt LWR TAB
             >;
         };
