@@ -95,6 +95,12 @@
             key-positions = <1 2 3>;
             bindings = <&kp LCMD &kp TAB>;
           };
+
+         combo_prntscrn {
+            timeout-ms = <50>;
+            key-positions = <0 1 2>;
+            bindings = <&kp PRINTSCREEN>;
+         };
         };
 
         conditional_layers {
