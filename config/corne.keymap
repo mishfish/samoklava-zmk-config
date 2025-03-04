@@ -104,6 +104,10 @@
             bindings = <&ide_f_macro>;
             key-positions = <22 10 34>;
         };
+        ide_go_edit {
+            bindings = <&ide_go_edit_macro>;
+            key-positions = <10 9 8>;
+        };
     };
 
     conditional_layers {
@@ -168,6 +172,23 @@
                 <&kp LCMD>;
 
             label = "IDE_F_MACRO";
+        };
+        ide_go_edit_macro: ide_go_edit_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LSHFT>,
+                <&macro_press>,
+                <&kp LCMD>,
+                <&macro_tap>,
+                <&kp BSPC>,
+                <&macro_release>,
+                <&kp LSHFT>,
+                <&macro_release>,
+                <&kp LCMD>;
+
+            label = "IDE_GO_EDIT_MACRO";
         };
     };
 
