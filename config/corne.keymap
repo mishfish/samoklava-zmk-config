@@ -39,13 +39,13 @@
               bindings = <&kp ESC>;
            };
            
-	   combo_prntscrn {
-	      timeout-ms = <50>;
-	      key-position = <0 1 2>;
-	      bindings = <&kp PRINTSCREEN>;
-	   }
+           combo_prntscrn {
+              timeout-ms = <50>;
+              key-position = <0 1 2>;
+              bindings = <&kp PRINTSCREEN>;
+	        };
 
-	   combo_lpar {
+	        combo_lpar {
               timeout-ms = <50>;
               key-positions = <1 2>;
               bindings = <&kp LPAR>;
