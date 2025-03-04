@@ -109,7 +109,13 @@
         new_macro: new_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(LG(KP_NUMBER_4))>, <&macro_press>;
+
+            bindings =     = <&macro_press &kp LSHFT>
+                           , <&macro_press &kp LCMD>
+                           , <&macro_tap &N4>
+                           , <&macro_release &kp LSHFT>
+                           , <&macro_release &kp LCMD>
+                           ;
 
             label = "NEW_MACRO";
         };
