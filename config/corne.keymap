@@ -27,6 +27,53 @@
 };
 
 / {
+
+     behaviors {
+            //                 Key positions
+            //       0  1  2  3  4  5    6  7  8  9 10 11
+            //      12 13 14 15 16 17   18 19 20 21 22 23
+            //      24 25 26 27 28 29   30 31 32 33 34 35
+            //               36 37 38   39 40 41
+
+            hml: homerow_mods_left {
+                compatible = "zmk,behavior-hold-tap";
+                label = "HOMEROW_MODS_LEFT";
+                #binding-cells = <2>;
+                flavor = "tap-preferred";
+                tapping-term-ms = <250>;
+                quick-tap-ms = <180>;
+                bindings = <&kp>, <&kp>;
+
+                hold-trigger-key-positions = <
+                                             6  7  8  9 10
+                           13 14 15 16      18 19 20 21 22
+                              26            30 31 32 33 34
+                                 36 37 38   39 40 41
+                >;
+
+                // <---[[right-hand keys + all homerow mods + all thumbs]]
+            };
+
+            hmr: homerow_mods_right {
+                compatible = "zmk,behavior-hold-tap";
+                label = "HOMEROW_MODS_RIGHT";
+                #binding-cells = <2>;
+                flavor = "tap-preferred";
+                tapping-term-ms = <250>;
+                quick-tap-ms = <180>;
+                bindings = <&kp>, <&kp>;
+
+                hold-trigger-key-positions = <
+                            1  2  3  4  5
+                           13 14 15 16 17      19 20 21 22
+                           25 26 27 28 29            33
+                                 36 37 38   39 40 41
+                >;
+
+                // <---[[left-hand keys + all homerow mods + all thumbs]]
+            };
+        };
+
     combos {
         compatible = "zmk,combos";
 
@@ -197,18 +244,18 @@
 
         default_layer {
             bindings = <
-&none  &kp Q        &kp W       &kp E        &kp R          &kp T       &kp Y         &kp U         &kp I           &kp O         &kp P           &none
-&none  &mt LCTRL A  &mt LALT S  &mt LCMD D   &mt LSHFT F    &kp G       &kp H         &mt RSHFT J   &mt RCMD K      &mt RALT L    &mt RCTRL SEMI  &none
-&none  &mt LCTRL Z  &mt LALT X  &mt LCMD C   &mt LSHFT V    &kp B       &kp N         &mt RSHFT M   &mt RCMD COMMA  &mt RALT DOT  &mt RCTRL FSLH  &none
-                                &lt RSE ESC  &lt LWR SPACE  &kp LCMD    &mt RCMD RET  &lt RSE BSPC  &lt LWR TAB
+&none  &kp Q         &kp W        &kp E          &kp R           &kp T       &kp Y         &kp U          &kp I         &kp O        &kp P            &none
+&none  &hml LCTRL A  &hml LALT S  &hml LCMD D    &hml LSHFT F    &kp G       &kp H         &hmr RSHFT J   &hmr RCMD K   &hmr RALT L  &hmr RCTRL SEMI  &none
+&none  &kp Z  &kp X  &kp C        &kp V          &kp B           &kp N       &kp M         &kp COMMA      &kp DOT       &kp FSLH     &none
+                                  &lt RSE LSHFT  &lt LWR SPACE   &kp LCMD    &mt RCMD RET  &lt RSE BSPC   &lt LWR TAB
             >;
         };
 
         lower_layer {
             bindings = <
-&none  &kp N1     &kp N2    &kp N3       &kp N4         &kp N5      &kp N6        &kp N7           &kp N8          &kp N9        &kp N0      &none
-&none  &kp LCTRL  &kp LALT  &kp LCMD     &kp LSHFT      &none       &kp LEFT      &kp DOWN         &kp UP          &kp RIGHT     &kp RCTRL   &none
-&none  &kp LCTRL  &kp LALT  &kp LCMD     &kp LSHFT      &none       &kp HOME      &mt RSHFT PG_DN  &mt RCMD PG_UP  &mt LALT END  &caps_word  &none
+&none  &kp N1     &kp N2    &kp N3       &kp N4         &kp N5      &kp N6        &kp N7           &kp UP          &kp N9        &kp N0      &none
+&none  &kp LCTRL  &kp LALT  &kp LCMD     &kp LSHFT      &none       &none         &kp LEFT         &kp DOWN        &kp RIGHT     &kp RCTRL   &none
+&none  &kp LCTRL  &kp LALT  &kp LCMD     &kp LSHFT      &none       &kp HOME      &mt RSHFT PG_DN  &mt RCMD PG_UP  &kp END       &caps_word  &none
                             &lt RSE ESC  &lt LWR SPACE  &kp LCMD    &mt RCMD RET  &mo RSE          &lt LWR TAB
             >;
         };
@@ -216,7 +263,7 @@
         raise_layer {
             bindings = <
 &none  &kp EXCL      &kp AT       &kp HASH     &kp DLLR       &kp PRCNT    &kp CARET     &kp AMPS         &kp KP_MULTIPLY  &kp LPAR       &kp RPAR        &none
-&none  &mt LCTRL F1  &mt LALT F2  &mt LCMD F3  &mt LSHFT F4   &kp F5       &kp MINUS     &mt RSHFT EQUAL  &mt RCMD LBKT    &mt RALT RBKT  &mt RCTRL BSLH  &none
+&none  &hml LCTRL F1  &hml LALT F2  &hml LCMD F3  &hml LSHFT F4   &kp F5       &kp MINUS     &hmr RSHFT EQUAL  &hmr RCMD LBKT    &hmr RALT RBKT  &hmr RCTRL BSLH  &none
 &none  &mt LCTRL F6  &mt LALT F7  &mt LCMD F8  &mt LSHFT F11  &kp F12      &kp UNDER     &mt RSHFT PLUS   &mt RCMD LBRC    &mt RALT RBRC  &mt RCTRL PIPE  &none
                                   &lt RSE ESC  &mo LWR        &kp GRAVE    &mt RCMD RET  &lt RSE BSPC     &lt LWR TAB
             >;
