@@ -254,7 +254,7 @@
         lower_layer {
             bindings = <
 &none  &kp N1     &kp N2    &kp N3       &kp N4         &kp N5      &kp N6        &kp N7           &kp UP          &kp N9        &kp N0      &none
-&none  &kp LCTRL  &kp LALT  &kp LCMD     &kp LSHFT      &none       &none         &kp LEFT         &kp DOWN        &kp RIGHT     &kp RCTRL   &none
+&none  &kp LCTRL  &kp LALT  &kp LCMD     &kp LSHFT      &none       &kp LEFT      &kp DOWN         &kp UP          &kp RIGHT     &kp RCTRL   &none
 &none  &kp LCTRL  &kp LALT  &kp LCMD     &kp LSHFT      &none       &kp HOME      &mt RSHFT PG_DN  &mt RCMD PG_UP  &kp END       &caps_word  &none
                             &lt RSE ESC  &lt LWR SPACE  &kp LCMD    &mt RCMD RET  &mo RSE          &lt LWR TAB
             >;
@@ -262,10 +262,10 @@
 
         raise_layer {
             bindings = <
-&none  &kp EXCL      &kp AT       &kp HASH     &kp DLLR       &kp PRCNT    &kp CARET     &kp AMPS         &kp KP_MULTIPLY  &kp LPAR       &kp RPAR        &none
+&none  &kp EXCL       &kp AT        &kp HASH      &kp DLLR        &kp PRCNT    &kp CARET     &kp AMPS          &kp KP_MULTIPLY   &kp LPAR        &kp RPAR         &none
 &none  &hml LCTRL F1  &hml LALT F2  &hml LCMD F3  &hml LSHFT F4   &kp F5       &kp MINUS     &hmr RSHFT EQUAL  &hmr RCMD LBKT    &hmr RALT RBKT  &hmr RCTRL BSLH  &none
-&none  &mt LCTRL F6  &mt LALT F7  &mt LCMD F8  &mt LSHFT F11  &kp F12      &kp UNDER     &mt RSHFT PLUS   &mt RCMD LBRC    &mt RALT RBRC  &mt RCTRL PIPE  &none
-                                  &lt RSE ESC  &mo LWR        &kp GRAVE    &mt RCMD RET  &lt RSE BSPC     &lt LWR TAB
+&none  &mt LCTRL F6   &mt LALT F7   &mt LCMD F8   &mt LSHFT F11   &kp F12      &kp UNDER     &mt RSHFT PLUS    &mt RCMD LBRC     &mt RALT RBRC   &mt RCTRL PIPE   &none
+                                    &lt RSE ESC   &mo LWR         &kp GRAVE    &mt RCMD RET  &lt RSE BSPC      &lt LWR TAB
             >;
         };
 
